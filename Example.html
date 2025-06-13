@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebView JS Handler Test</title>
+</head>
+<body>
+    <h1>WebView Integration</h1>
+    <button onclick="showToast()">Show Toast</button>
+    <button onclick="sendData()">Send Data</button>
+    <script type="text/javascript">
+        function showToast() {
+            AndroidBridge.showToast("Hello from JavaScript");
+        }
+
+        function sendData() {
+            AndroidBridge.onDataReceived("Some data from JS");
+        }
+
+        function showMessage(msg) {
+            alert("JS received: " + msg);
+        }
+    </script>
+</body>
+</html>
